@@ -1,0 +1,9 @@
+import sbt._
+
+object Dependencies {
+
+  lazy val playJson = "com.typesafe.play" %% "play-json" % "2.6.8"
+
+  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.0.3"
+
+}
