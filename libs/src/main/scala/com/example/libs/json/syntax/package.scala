@@ -10,7 +10,7 @@ package object syntax {
     * @param ow
     * @tparam A
     */
-  final implicit class OWritesOps[A](val ow: OWrites[A]) {
+  final implicit class OWritesOps[A](val ow: OWrites[A]) extends AnyVal {
     def omitNull(keysNullable: List[String]): OWrites[A] = OWrites { o =>
       keysNullable.foldLeft(ow.writes(o)) {
         case (json, key) if !json.keys.contains(key) => json + (key -> JsNull)
